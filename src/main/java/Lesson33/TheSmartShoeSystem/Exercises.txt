@@ -1,38 +1,50 @@
 Exercise 1 – Add a new validator
 
-Create a new validator:
-SportsValidator
+    Create a new validator:
+        SportsValidator
+    Rules:
+        Valid sizes: 38–48
+    Otherwise throw:
+        throw new InvalidShoeSizeException("Sports shoes must be between 38 and 48");
 
-Rules:
-Valid sizes: 38–48
-
-Otherwise throw:
-throw new InvalidShoeSizeException("Sports shoes must be between 38 and 48");
+    --- DONE ---
 
 Exercise 2 – Add a Luxury Shoe mode
 
-Create:
-LuxuryValidator
+    Create:
+        LuxuryValidator
 
-Rules:
-Only allow sizes 40–45
-Throw exception otherwise
+    Rules:
+        Only allow sizes 40–45
+        Throw exception otherwise
+
+    --- DONE ---
 
 Exercise 3 – Extend Shoe class
 
-Add a method:
-public void printInfo()
-It should print:
-Current size
-Which validator is currently used (hint: use getClass().getSimpleName())
+    Add a method:
+        public void printInfo()
+    It should print:
+        Current size
+        Which validator is currently used (hint: use getClass().getSimpleName())
+
+    --- DONE ---
 
 Exercise 4 – Dynamic switching
 
-In Main:
-Create a Shoe object with one validator
-Change validator at runtime multiple times
-Test invalid + valid inputs for each validator
+    In Main:
+        Create a Shoe object with one validator
+        Change validator at runtime multiple times
+        Test invalid + valid inputs for each validator
 
 Exercise 5 – Reflection (thinking task)
-Why is it useful that we can switch validators without changing Shoe?
-What would break if validation was hardcoded inside Shoe?
+    Question: Why is it useful that we can switch validators without changing Shoe?
+    Answer: Because the validate()-method can be polymorphed depending on the validator and which exception it throws,
+    but also honors the Open/Closed principle of SOLID (add functionality without having to modify the existing code).
+
+    Question: What would break if validation was hardcoded inside Shoe?
+    Answer: The Single Responsibility and Open/Closed principles of SOLID. Furthermore, it would not be able to reuse
+    the validation logic anywhere else. You would have to change directly in Shoe.java everytime you'd want to add
+    another type of shoe (using e.g. if/else trees).
+
+    --- DONE ---

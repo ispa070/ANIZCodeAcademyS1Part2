@@ -1,20 +1,15 @@
 package Lesson33.TheSmartShoeSystem.validation;
 
-
 import Lesson33.TheSmartShoeSystem.exception.InvalidShoeSizeException;
 
-/**
- * Normal shoe size rules
- * Example: size must be between 35 and 50
- */
-public class NormalValidator implements ShoeValidator {
+public class SportsValidator implements ShoeValidator {
 
     @Override
     public void validate(int size) throws InvalidShoeSizeException {
 
         // Check if size is outside valid range
-        if (size < 35 || size > 50) {
-            throw new InvalidShoeSizeException("normal shoes must be between 35 and 50");
+        if (size < 38 || size > 48) {
+            throw new InvalidShoeSizeException("sports shoes must be between 38 and 48");
         }
     }
 }

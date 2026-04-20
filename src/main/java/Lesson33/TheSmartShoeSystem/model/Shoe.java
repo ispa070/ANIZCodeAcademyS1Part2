@@ -35,14 +35,14 @@ public class Shoe {
      * Setter for size with validation
      */
     public void setSize(int size) throws InvalidShoeSizeException {
-
+        System.out.println("Attempting to change shoe size to " + size + "...");
         // Use strategy to validate input
         validator.validate(size);
 
         // Only set size if validation passes
         this.size = size;
 
-        System.out.println("Shoe size set to: " + size);
+        System.out.println("Shoe size has succesfully been changed to " + size + "!");
     }
 
     /**
@@ -51,4 +51,11 @@ public class Shoe {
     public int getSize() {
         return size;
     }
+
+    public void printValidatorUpdate() {
+        System.out.println("---------------------------------------------");
+        System.out.println("Current validation model is '" + validator.getClass().getSimpleName() + "'");
+        System.out.println("---------------------------------------------");
+    }
+
 }
