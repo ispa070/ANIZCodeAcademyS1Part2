@@ -14,7 +14,10 @@ class BankAccount {
     }
 
     // deposit method
-    public void deposit(double amount) {
+    public void deposit(double amount) throws Exception {
+        if (amount < 0) {
+            throw new Exception("Amount must be positive!");
+        }
         balance += amount;
     }
 

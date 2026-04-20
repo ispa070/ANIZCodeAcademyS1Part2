@@ -10,6 +10,12 @@ public class BankAccountTest {
             System.out.println(e.getMessage());
         }
 
+        try {
+            account.deposit(-100);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println("Balance: " + account.getBalance());
     }
 }
