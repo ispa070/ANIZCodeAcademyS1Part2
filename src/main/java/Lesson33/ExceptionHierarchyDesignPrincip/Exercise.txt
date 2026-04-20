@@ -10,10 +10,16 @@ Exercise: Add a new bike (ChristianiaBike)
     A Christiania bike cannot carry more than 100 kg
     If it does → throw a custom exception
 
+    --- DONE ---
+
 2. Create a new exception:
     OverloadException
     It must extend BikeException
 
+    --- DONE ---
+
 3. Update Main:
     Add a ChristianiaBike to the array
     Handle the new exception
+
+    --- DONE ---

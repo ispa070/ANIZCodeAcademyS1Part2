@@ -6,7 +6,7 @@ import Lesson33.ExceptionHierarchyDesignPrincip.Exceptions.*;
 public class ElectricBike implements Rideable {
 
     @Override
-    public void ride(int tirePressure, boolean brakesWorking) throws BikeException {
+    public void ride(int tirePressure, boolean brakesWorking, int cargoLoad) throws BikeException {
         int batteryLevel = 10; // simulate battery
 
         if (batteryLevel < 20) {

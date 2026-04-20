@@ -5,7 +5,7 @@ import Lesson33.ExceptionHierarchyDesignPrincip.Exceptions.*;
 public class Bike implements Rideable {
 
     @Override
-    public void ride(int tirePressure, boolean brakesWorking) throws BikeException {
+    public void ride(int tirePressure, boolean brakesWorking, int cargoLoad) throws BikeException {
         if (tirePressure < 20) {
             throw new FlatTireException();
         }
